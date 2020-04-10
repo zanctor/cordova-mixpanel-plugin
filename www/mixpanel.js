@@ -77,6 +77,10 @@ mixpanel.identify = function(id, usePeople, onSuccess, onFail) {
   exec(onSuccess, onFail, 'Mixpanel', 'identify', [id, !!usePeople]);
 };
 
+mixpanel.showNotification = function(onSuccess, onFail) {
+  exec(onSuccess, onFail, 'Mixpanel', 'showNotification');
+};
+
 mixpanel.init = function(token, onSuccess, onFail) {
   if (!token || typeof token != 'string') {
     return onFail(errors.invalid('token', token));

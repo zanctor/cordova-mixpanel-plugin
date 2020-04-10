@@ -104,6 +104,15 @@
 }
 
 
+-(void)showNotification:(CDVInvokedUrlCommand*)command;
+{
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    Mixpanel* mixpanelInstance = [Mixpanel sharedInstance];
+    [mixpanelInstance showNotification];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+
 -(void)init:(CDVInvokedUrlCommand*)command;
 {
     CDVPluginResult* pluginResult = nil;
